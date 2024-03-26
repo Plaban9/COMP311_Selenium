@@ -45,17 +45,23 @@ from selenium.webdriver.support.ui import Select
 
 
 def test_all_in_one_edge():
-    driver = webdriver.ChromiumEdge()
+    options = webdriver.EdgeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.ChromiumEdge(options=options)
     browser_main_logic(driver)
 
 
 def test_all_in_one_chrome():
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome(options=options)
     browser_main_logic(driver)
 
 
 def test_all_in_one_firefox():
-    driver = webdriver.Firefox()
+    options = webdriver.FirefoxOptions()
+    options.add_argument("-headless")
+    driver = webdriver.Firefox(options=options)
     browser_main_logic(driver)
 
 
